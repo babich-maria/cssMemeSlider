@@ -31,8 +31,8 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-  .container {
-    max-width: 100%;
+  .content {
+    flex-direction: column-reverse;
   }
 }
 
@@ -87,6 +87,14 @@ input#img4:checked ~ .main .images .image-holder {
   font-size: 1.5rem;
 
   transition: transform 1s ease-in-out;
+  align-items: center;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .titles{
+    align-items: flex-start;
+  }
 }
 
 .text {
@@ -121,16 +129,33 @@ input#img4:checked ~ .main .content .titles {
   gap: 1rem;
 }
 
+@media only screen and (max-width: 768px) {
+  .controls{
+    justify-content: center;
+    align-items: center;
+    flex-basis: 100%;
+  }
+}
+
 .circle {
   border-radius: 10rem;
-  border: 0.1rem solid #458dda;
-  padding: 1rem;
-  cursor: pointer;
+  --border: 0.2rem solid #458dda;
+  background: #458dda;
+  padding: 0.6rem;
   transition: 0.3s;
 }
 
 .circle:hover {
-  background: #458dda;
-  border: 2px solid #458dda;
+  background: white;
+  --border: 2px solid white;
+  cursor: pointer;
   transition: 0.3s;
+}
+
+input#img1:checked + .controls label[for="img1"],
+input#img2:checked + .controls label[for="img2"],
+input#img3:checked + .controls label[for="img3"],
+input#img4:checked + .controls label[for="img4"] {
+  --background: #458dda; /* Выделение активного кружка */
+  --border: 0.2rem solid #ffffff; /* Белый контур для выделенного кружка */
 }
