@@ -36,19 +36,81 @@ body {
   }
 }
 
+input[type="radio"] {
+  display: none;
+}
+
 .images {
   overflow: hidden;
   display: flex;
+}
+
+.image-holder {
+  display: flex;
+  transition: transform 1s ease-in-out;
 }
 
 img {
   object-fit: fill;
   width: 100%;
   flex-shrink: 0;
+  max-width: 100%;
+}
+
+input#img1:checked ~ .main .images .image-holder {
+  transform: translateX(0);
+}
+
+input#img2:checked ~ .main .images .image-holder {
+  transform: translateX(-100%);
+}
+
+input#img3:checked ~ .main .images .image-holder {
+  transform: translateX(-200%);
+}
+
+input#img4:checked ~ .main .images .image-holder {
+  transform: translateX(-300%);
 }
 
 .content {
   display: flex;
+}
+
+.titles-wrapper{
+  overflow: hidden;
+}
+
+.titles {
+  display: flex;
+  color: white;
+  font-size: 1.5rem;
+
+  transition: transform 1s ease-in-out;
+}
+
+.text {
+  width: 100%;
+  flex-shrink: 0;
+  padding: 1rem;
+  will-change: transform, opacity;
+  
+}
+
+input#img1:checked ~ .main .content .titles {
+  transform: translateX(0);
+}
+
+input#img2:checked ~ .main .content .titles {
+  transform: translateX(-100%);
+}
+
+input#img3:checked ~ .main .content .titles {
+  transform: translateX(-200%);
+}
+
+input#img4:checked ~ .main .content .titles {
+  transform: translateX(-300%);
 }
 
 .controls {
@@ -59,24 +121,11 @@ img {
   gap: 1rem;
 }
 
-.titles {
-  display: flex;
-  overflow: hidden;
-
-  color: white;
-  font-size: 1.5rem;
-}
-
-.text {
-  width: 100%;
-  flex-shrink: 0;
-  padding: 1rem;
-}
-
 .circle {
   border-radius: 10rem;
   border: 0.1rem solid #458dda;
   padding: 1rem;
+  cursor: pointer;
   transition: 0.3s;
 }
 

@@ -9,26 +9,34 @@
 </head>
 
 <body>
+  <input type="radio" name="carousel" id="img1" checked>
+  <input type="radio" name="carousel" id="img2">
+  <input type="radio" name="carousel" id="img3">
+  <input type="radio" name="carousel" id="img4">
   <main class="main">
     <div class="container">
       <section class="images">
-        <img src="./assets/1.gif"></img>
-        <img src="./assets/2.gif"></img>
-        <img src="./assets/3.gif"></img>
-        <img src="./assets/4.gif"></img>
+        <div class="image-holder">
+          <img src="./assets/1.gif" alt="mem1">
+          <img src="./assets/2.gif" alt="mem2">
+          <img src="./assets/3.gif" alt="mem3">
+          <img src="./assets/4.gif" alt="mem4">
+        </div>
       </section>
       <section class="content">
-        <div class="titles">
-          <div class="text">The two types of depressed people</div>
-          <div class="text">Где то там</div>
-          <div class="text">Горящие дедлайны по задачам</div>
-          <div class="text">А как вы относитесь к буллингу на работе?</div>
+        <div class="titles-wrapper">
+          <div class="titles">
+            <div class="text">The two types of depressed people</div>
+            <div class="text">Где то там</div>
+            <div class="text">Горящие дедлайны по задачам</div>
+            <div class="text">А как вы относитесь к буллингу на работе?</div>
+          </div>
         </div>
         <div class="controls">
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
+          <label for="img1" class="circle"></label>
+          <label for="img2" class="circle"></label>
+          <label for="img3" class="circle"></label>
+          <label for="img4" class="circle"></label>
         </div>
       </section>
     </div>
