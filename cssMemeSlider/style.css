@@ -151,9 +151,12 @@ input#img4:checked~.main .content .titles {
   padding: 0.5rem;
 }
 
+.radio-wrapper:hover {
+  cursor: pointer;
+}
+
 .radio-wrapper:hover .circle {
   background: white;
-  cursor: pointer;
 }
 
 /* Активное состояние для выбранного radio */
