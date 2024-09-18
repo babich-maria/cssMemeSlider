@@ -123,7 +123,6 @@ input#img4:checked~.main .content .titles {
   flex-basis: 25%;
   justify-content: right;
   align-items: center;
-  gap: 1rem;
 }
 
 @media only screen and (max-width: 768px) {
@@ -136,34 +135,41 @@ input#img4:checked~.main .content .titles {
   }
 }
 
-.circle:hover {
-  background: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
 .circle {
   border-radius: 50%;
   background: #458dda;
-  padding: 0.6rem;
+  width: 15px;
+  height: 15px;
+  transition: 0.3s;
   border: 0.2rem solid transparent;
-  transition: 0.3s;
 }
 
-input#img1:checked~main .content .controls label[for="img1"],
-input#img2:checked~main .content .controls label[for="img2"],
-input#img3:checked~main .content .controls label[for="img3"],
-input#img4:checked~main .content .controls label[for="img4"] {
-  background: transparent;
-  border: 0.2rem solid #458dda;
+.radio-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
 }
 
-input#img1:checked~main .content .controls label[for="img1"]:hover,
-input#img2:checked~main .content .controls label[for="img2"]:hover,
-input#img3:checked~main .content .controls label[for="img3"]:hover,
-input#img4:checked~main .content .controls label[for="img4"]:hover {
-  background: transparent;
-  border: 0.2rem solid white;
+.radio-wrapper:hover .circle {
+  background: white;
   cursor: pointer;
-  transition: 0.3s;
+}
+
+/* Активное состояние для выбранного radio */
+input#img1:checked~main .content .controls label[for="img1"] .circle,
+input#img2:checked~main .content .controls label[for="img2"] .circle,
+input#img3:checked~main .content .controls label[for="img3"] .circle,
+input#img4:checked~main .content .controls label[for="img4"] .circle {
+  background: transparent;
+  border-color: #458dda;
+}
+
+/* Ховер эффект на активном состоянии */
+input#img1:checked~main .content .controls label[for="img1"]:hover .circle,
+input#img2:checked~main .content .controls label[for="img2"]:hover .circle,
+input#img3:checked~main .content .controls label[for="img3"]:hover .circle,
+input#img4:checked~main .content .controls label[for="img4"]:hover .circle {
+  background: transparent;
+  border-color: white;
 }
