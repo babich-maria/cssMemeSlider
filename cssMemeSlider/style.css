@@ -1,0 +1,178 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(29, 29, 29);
+}
+
+.main {
+  width: 60vw;
+  max-width: 95vw;
+  margin: 0 auto;
+}
+
+.container {
+  height: 95vh;
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 768px) {
+  .content {
+    flex-direction: column-reverse;
+  }
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.images {
+  overflow: hidden;
+  display: flex;
+}
+
+.image-holder {
+  display: flex;
+  transition: transform 1s ease-in-out;
+}
+
+img {
+  object-fit: fill;
+  width: 100%;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+input#img1:checked~.main .images .image-holder {
+  transform: translateX(0);
+}
+
+input#img2:checked~.main .images .image-holder {
+  transform: translateX(-100%);
+}
+
+input#img3:checked~.main .images .image-holder {
+  transform: translateX(-200%);
+}
+
+input#img4:checked~.main .images .image-holder {
+  transform: translateX(-300%);
+}
+
+.content {
+  display: flex;
+  padding: 3%;
+}
+
+.titles-wrapper {
+  overflow: hidden;
+}
+
+.titles {
+  display: flex;
+  color: white;
+  font-size: 1.5rem;
+
+  transition: transform 1s ease-in-out;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .titles {
+    align-items: flex-start;
+  }
+}
+
+.text {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+input#img1:checked~.main .content .titles {
+  transform: translateX(0);
+}
+
+input#img2:checked~.main .content .titles {
+  transform: translateX(-100%);
+}
+
+input#img3:checked~.main .content .titles {
+  transform: translateX(-200%);
+}
+
+input#img4:checked~.main .content .titles {
+  transform: translateX(-300%);
+}
+
+.controls {
+  display: flex;
+  flex-basis: 25%;
+  justify-content: right;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .controls {
+    justify-content: center;
+    align-items: center;
+    flex-basis: auto;
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+}
+
+.circle {
+  border-radius: 50%;
+  background: #458dda;
+  width: 1rem;
+  height: 1rem;
+  transition: 0.3s;
+  border: 0.2rem solid transparent;
+}
+
+.radio-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.radio-wrapper:hover {
+  cursor: pointer;
+}
+
+.radio-wrapper:hover .circle {
+  background: white;
+}
+
+/* Активное состояние для выбранного radio */
+input#img1:checked~main .content .controls label[for="img1"] .circle,
+input#img2:checked~main .content .controls label[for="img2"] .circle,
+input#img3:checked~main .content .controls label[for="img3"] .circle,
+input#img4:checked~main .content .controls label[for="img4"] .circle {
+  background: transparent;
+  border-color: #458dda;
+}
+
+/* Ховер эффект на активном состоянии */
+input#img1:checked~main .content .controls label[for="img1"]:hover .circle,
+input#img2:checked~main .content .controls label[for="img2"]:hover .circle,
+input#img3:checked~main .content .controls label[for="img3"]:hover .circle,
+input#img4:checked~main .content .controls label[for="img4"]:hover .circle {
+  background: transparent;
+  border-color: white;
+}
